@@ -52,7 +52,7 @@ async function getHistoricalPrice(unixTsMs, pair, exchange, tf = '1m') {
 }
 
 async function getCurrentPrice(pair) {
-    const exchange = new ccxt.bybit();
+    const exchange = new ccxt.mexc();
     try {
         const ticker = await exchange.fetchTicker(pair);
         return ticker.last;
@@ -81,7 +81,7 @@ async function parseTxn(txn, coin, exchange) {
 }
 
 async function parseTxns(txns, coin) {
-    const exchange = new ccxt.bybit();
+    const exchange = new ccxt.mexc();
     const results = await Promise.all(txns.map(txn => parseTxn(txn, coin, exchange)));
     return results.filter(x => x !== null);
 }
