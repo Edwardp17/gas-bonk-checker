@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
@@ -35,11 +36,11 @@ const HomePage = () => {
                 <title>ETH Gas Calculator</title>
             </Head>
             <div className={styles.imageContainer}>
-                <img src="/bonk_gas.jpeg" alt="Bonk Gas" className={styles.bonkImage} />
+                <Image src="/bonk_gas.jpeg" alt="Bonk Gas" className={styles.bonkImage} />
             </div>
             <div className={styles.mainContainer}>
                 <div className={styles.formContainer}>
-                    <h1 className={styles.heading}>You could've bought a coin with no soul</h1>
+                    <h1 className={styles.heading}>You couldve bought a coin with no soul</h1>
                     <h4 className={styles.subHeading}>What if you bought BONK with all of your ETH gas instead of well, throwing that money away?</h4>
                     <form onSubmit={handleSubmit} className={styles.form}>
                         <label className={styles.label} htmlFor="address">ETH Address:</label>
@@ -55,7 +56,7 @@ const HomePage = () => {
                     </form>
                     {isLoading && (
                         <div className={styles.spinner}>
-                            <img src="/bonk.jpeg" alt="Loading..." className={styles.spinnerImage} />
+                            <Image src="/bonk.jpeg" alt="Loading..." className={styles.spinnerImage} />
                         </div>
                     )}
                     <div className={styles.resultsContainer}>
