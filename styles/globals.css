@@ -1,0 +1,15 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #ffa500; /* Black background everywhere */
+}
+
+#__next {
+  height: 100%;
+}

@@ -1,0 +1,170 @@
+/* Home.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Container for the whole page content */
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: #ffa500; /* Orange background for the entire page */
+    padding: 20px;
+    min-height: 100vh; /* Ensures the container fills at least the whole viewport height */
+}
+
+/* Container for the image */
+.imageContainer {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+/* Styles for the image */
+.bonkImage {
+    max-width: 200px; /* Adjust the width as needed */
+    height: auto; /* This will ensure the aspect ratio is maintained */
+}
+
+/* Container for the form and results */
+.formContainer {
+    flex-grow: 1;
+    max-width: 600px; /* Adjust the width as needed */
+    width: 100%;
+}
+
+/* Styling for the heading */
+.heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Styling for sub-headings or descriptive text */
+.subHeading {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Styling for form labels */
+.label {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-weight: 700;
+    display: block; /* Make sure the label is block level to take up its own line */
+    margin-top: 0.5rem;
+}
+
+/* Container for the form itself */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for text inputs and date inputs */
+.inputText {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 50%; /* Ensure inputs take full width */
+    max-width: 400px;
+}
+
+.inputDate {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 20%; /* Ensure inputs take full width */
+    max-width: 400px;
+}
+
+/* Styling for the submit button */
+.inputSubmit {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease;
+    width: 20%;
+}
+
+/* Hover effect for the submit button */
+.inputSubmit:hover {
+    background-color: #555;
+}
+
+/* Container for the loading spinner */
+.spinner {
+    display: flex; /* Use flex to center the spinner image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Take up full width to center spinner in the parent */
+    height: 100px; /* Height to keep space for spinner */
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+/* Styling for the spinner image */
+.spinnerImage {
+    width: 200px; /* Set a fixed width for your spinner */
+    height: 200px; /* Set a fixed height for your spinner */
+    animation: spin .2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styling for the results container */
+.resultsContainer {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Styling for the results text */
+.results {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageContainer {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .formContainer {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 2rem; /* Slightly smaller font size on smaller screens */
+    }
+}
