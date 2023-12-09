@@ -80,10 +80,13 @@ async function parseTxn(txn, coin, exchange) {
     };
 }
 
-async function parseTxns(txns, coin) {
-    const exchange = new ccxt.mexc();
-    const results = await Promise.all(txns.map(txn => parseTxn(txn, coin, exchange)));
-    return results.filter(x => x !== null);
+async function parseTxns(txns, coin, exchange) {
+    // Run multiple parseTxn calls in parallel
+    const promises = txns.map(txn => parseTxn(txn, coin, exchange));
+    const results = await Promise.allSettled(promises);
+    return results
+        .filter(result => result.status === 'fulfilled' && result.value !== null)
+        .map(result => result.value);
 }
 
 async function main(address, startDt, endDt, coin) {
@@ -102,8 +105,9 @@ async function main(address, startDt, endDt, coin) {
         endDate = currentDate;
     }
 
+    const exchange = new ccxt.mexc(); // Initialize once
     const txns = await getTxns(address, startDate, endDate);
-    const potentialCoinsDict = await parseTxns(txns, coin);
+    const potentialCoinsDict = await parseTxns(txns, coin, exchange);
 
     const totalTxnFeeEth = potentialCoinsDict.reduce((acc, curr) => acc + curr.txn_fee_eth, 0);
     const totalTxnFeeUsd = potentialCoinsDict.reduce((acc, curr) => acc + curr.txn_fee_usd, 0).toFixed(2);
