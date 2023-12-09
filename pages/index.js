@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
@@ -36,7 +35,7 @@ const HomePage = () => {
                 <title>ETH Gas Calculator</title>
             </Head>
             <div className={styles.imageContainer}>
-                <Image src="/bonk_gas.jpeg" alt="Bonk Gas" className={styles.bonkImage} />
+                <img src="/bonk_gas.jpeg" alt="Bonk Gas" className={styles.bonkImage} />
             </div>
             <div className={styles.mainContainer}>
                 <div className={styles.formContainer}>
@@ -56,7 +55,7 @@ const HomePage = () => {
                     </form>
                     {isLoading && (
                         <div className={styles.spinner}>
-                            <Image src="/bonk.jpeg" alt="Loading..." className={styles.spinnerImage} />
+                            <img src="/bonk.jpeg" alt="Loading..." className={styles.spinnerImage} />
                         </div>
                     )}
                     <div className={styles.resultsContainer}>
