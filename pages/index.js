@@ -98,7 +98,7 @@ const HomePage = () => {
             const calculateFeesData = await calculateFeesResponse.json();
 
             // Format and set results
-            const formattedResult = `You spent ${calculateFeesData.totalTxnFeeEth} ETH or $${calculateFeesData.totalTxnFeeUsd} USD on gas. Meanwhile, you could have bought ${calculateFeesData.totalBonkCoins} BONK which today would be worth...........${calculateFeesData.totalBonkUsd} USD.`;
+            const formattedResult = `You spent ${calculateFeesData.totalTxnFeeEth} ETH or $${calculateFeesData.totalTxnFeeUsd} USD on gas. Meanwhile, you could have bought ${calculateFeesData.totalBonkCoins} BONK which today would be worth...........$${calculateFeesData.totalBonkUsd} USD.`;
             setResults(formattedResult);
         } catch (error) {
             console.error('Error:', error);
