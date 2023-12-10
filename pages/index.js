@@ -111,7 +111,7 @@ const HomePage = () => {
         <>
             <Head>
                 <link rel="icon" href="/bonk_gas.jpeg" />
-                <title>ETH Gas Calculator</title>
+                <title>ETH gas bad :(</title>
             </Head>
             <div className={styles.imageContainer}>
                 <img src="/bonk_gas.jpeg" alt="Bonk Gas" className={styles.bonkImage} />
