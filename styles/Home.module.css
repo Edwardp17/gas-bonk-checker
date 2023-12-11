@@ -95,6 +95,7 @@
     border: none;
     transition: background-color 0.3s ease;
     width: 20%;
+    max-width: 400px;
 }
 
 /* Hover effect for the submit button */
@@ -149,7 +150,6 @@
 }
 
 /* Responsive adjustments for smaller screens */
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .mainContainer {
         flex-direction: column;
@@ -162,19 +162,29 @@
         margin-bottom: 20px;
     }
 
-    .formContainer {
-        width: 80%;
+    /* Ensure .formContainer and .resultsContainer are aligned and centered */
+    .formContainer, .resultsContainer {
+        width: 80%; /* Set the width to be the same for both containers */
+        margin-left: auto; /* Centralize containers */
+        margin-right: auto;
+        box-sizing: border-box; /* Include padding and borders in the width */
     }
 
-    .inputText, .inputDate {
-        width: 80%; /* Full width for smaller screens */
-        max-width: none; /* Remove max-width restriction */
+    .form {
+        width: 100%; /* Ensure the form uses the full width of .formContainer */
+    }
+
+    .inputText, .inputDate, .inputSubmit {
+        width: calc(100% - 1rem); /* Subtract the total horizontal padding */
+        margin: 0.5rem; /* Half of the subtracted padding to maintain spacing */
+        box-sizing: border-box; /* Include padding and borders in the width */
     }
 
     .resultsContainer {
         padding: 10px; /* Adjust padding for smaller screens */
         max-height: 200px; /* Adjust max-height for better fit */
         overflow-y: auto; /* Add scroll for overflow content */
+        width: 100%;
     }
 
     .heading {
