@@ -149,10 +149,12 @@
 }
 
 /* Responsive adjustments for smaller screens */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .mainContainer {
         flex-direction: column;
         align-items: center;
+        padding: 10px; /* Reduced padding */
     }
 
     .imageContainer {
@@ -161,10 +163,21 @@
     }
 
     .formContainer {
-        width: 100%;
+        width: 80%;
+    }
+
+    .inputText, .inputDate {
+        width: 80%; /* Full width for smaller screens */
+        max-width: none; /* Remove max-width restriction */
+    }
+
+    .resultsContainer {
+        padding: 10px; /* Adjust padding for smaller screens */
+        max-height: 200px; /* Adjust max-height for better fit */
+        overflow-y: auto; /* Add scroll for overflow content */
     }
 
     .heading {
-        font-size: 2rem; /* Slightly smaller font size on smaller screens */
+        font-size: 1.8rem; /* Smaller font size for heading */
     }
 }
